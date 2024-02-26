@@ -16,7 +16,7 @@ function UpdateBook() {
     const getBook = (bookId) => {
         const allBooks = getBookData();
         const books = allBooks.find((bk) => {
-            return bk.id == bookId;
+            return bk.isbn == bookId;
         })
         setSelectedBook(books);
     }
@@ -24,7 +24,7 @@ function UpdateBook() {
         const booklist = getBookData();
         let isUpdate = false;
         booklist.map((book, index) => {
-            if (book.id === selectedBook.id) {
+            if (book.isbn === selectedBook.isbn) {
                 booklist[index] = selectedBook;
                 isUpdate = true;
                 setBookData(booklist);

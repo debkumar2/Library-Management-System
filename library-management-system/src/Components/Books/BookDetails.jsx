@@ -13,7 +13,7 @@ function BookDetails() {
         const allBooks = getBookData();
         // console.log(allBooks);
         const book = allBooks.find((bk) => {
-            return bk.id == BookId;
+            return bk.isbn == BookId;
         })
         setSelectedBook(book);
     }
