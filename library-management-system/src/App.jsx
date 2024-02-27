@@ -7,6 +7,7 @@ import BookDetails from "./Components/Books/BookDetails";
 import UpdateBook from "./Components/Books/UpdateBook";
 import AddBorrowers from "./Components/Borrowers/AddBorrowers";
 import BorrowerList from "./Components/Borrowers/BorrowerList";
+import Protected from "./utils/Protected";
 
 
 const router = createBrowserRouter([
@@ -16,31 +17,36 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />
+    element: < Protected Component={Dashboard} />
   },
   {
     path: '/books',
-    element: <BookList />
+    element: <Protected Component={BookList} />
   },
   {
     path: '/books/add',
-    element: <AddBook />
+    element: <Protected Component={AddBook} />
+
   },
   {
     path: '/books/:id',
-    element: <BookDetails />
+    element: < Protected Component={BookDetails} />
+
   },
   {
     path: '/book/edit/:id',
-    element: <UpdateBook />
+    element: < Protected Component={UpdateBook} />
+
   },
   {
     path: '/borrower/add',
-    element: <AddBorrowers />
+    element: < Protected Component={AddBorrowers} />
+
   },
   {
     path: '/borrower',
-    element: <BorrowerList />
+    element: < Protected Component={BorrowerList} />
+
   }
 
 ])

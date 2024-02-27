@@ -1,19 +1,22 @@
 import Lottie from "lottie-react";
 import AnimationData from '../images/Animation - 1707757606123.json';
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const toMainPage = () => {
-        if (email === 'Admin' && password === 'admin') {
+    useEffect(() => {
+        const login = localStorage.getItem('login');
+        if (login) {
             navigate('/dashboard');
         }
-        else {
-            alert('Wrong Information');
-            navigate('/');
+    })
+    const toMainPage = () => {
+        if (email === 'Admin' && password === 'admin') {
+            localStorage.setItem('login', true);
+            navigate('/dashboard');
         }
     }
     return (
