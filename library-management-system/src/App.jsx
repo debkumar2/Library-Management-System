@@ -8,6 +8,8 @@ import UpdateBook from "./Components/Books/UpdateBook";
 import AddBorrowers from "./Components/Borrowers/AddBorrowers";
 import BorrowerList from "./Components/Borrowers/BorrowerList";
 import Protected from "./utils/Protected";
+import IssueBookList from "./Components/IssueBook/IssueBookList";
+import IssueBookAdd from "./Components/IssueBook/IssueBookAdd";
 
 
 const router = createBrowserRouter([
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
     path: '/borrower',
     element: < Protected Component={BorrowerList} />
 
+  },
+  {
+    path: '/issuebook',
+    element: <IssueBookList />
+  },
+  {
+    path: '/issuebook/add',
+    element: <IssueBookAdd />
   }
 
 ])

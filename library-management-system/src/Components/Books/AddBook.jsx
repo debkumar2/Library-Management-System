@@ -13,7 +13,7 @@ function AddBook() {
     const [authorNameError, setAuthorNameError] = useState('');
     const [isbn, setIsbn] = useState('');
     const [isbnError, setIsbnError] = useState('');
-    const [available, setAvailable] = useState('')
+    const [available, setAvailable] = useState()
     const [availableError, setAvailableError] = useState('')
     const [category, setCategory] = useState('');
     const [bookDescription, setBookDescription] = useState('');

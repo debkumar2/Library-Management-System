@@ -2,11 +2,14 @@ import Lottie from "lottie-react";
 import AnimationData from '../images/Animation - 1707757606123.json';
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Slide, ToastContainer, toast } from "react-toastify";
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+
+
     useEffect(() => {
         const login = localStorage.getItem('login');
         if (login) {
@@ -18,9 +21,35 @@ function Login() {
             localStorage.setItem('login', true);
             navigate('/dashboard');
         }
+        else {
+            toast.error('Please fill correct details', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            });
+        }
     }
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={1500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition:Slide
+            />
             <div className="h-screen" style={{ backgroundColor: '#2234ae', backgroundImage: 'linear-gradient(315deg, #2234ae 0%, #191714 74%)' }}>
                 <div class="py-16">
                     <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">

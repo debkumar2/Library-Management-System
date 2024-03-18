@@ -153,7 +153,9 @@ function BookList() {
                             } */}
                         </table>
                     </div>
-                    < Pagination setCurrentPage={setCurrentPage} totalBooks={filteredBook.length} booksPerPage={booksPerPage} currentPage={currentPage} />
+                    {filteredBook.length > 6 ?
+                        < Pagination setCurrentPage={setCurrentPage} totalBooks={filteredBook.length} booksPerPage={booksPerPage} currentPage={currentPage} />
+                        : null}
                 </div>
             </div>
         </>
